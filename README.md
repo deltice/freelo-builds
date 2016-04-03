@@ -1,6 +1,6 @@
 # freelo-builds
 
-freelo.tech
+Executable file available at freelo.tech
 
 Java desktop program that helps users in League of Legends determine what item to build next using a database of winrates by situtation (determined by current user item build and enemy item builds).
 
