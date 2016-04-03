@@ -12,4 +12,4 @@ freelo.tech domain name registered by .tech, with website written in html and cs
 
 Currently only works for 1920x1080 resolution.
 
-Dependencies: json-simple-1.1.1, FreeTTS 1.2, jnativehoook, Java Advanced Imaging 1.1.2
+Dependencies: json-simple-1.1.1, FreeTTS 1.2, jnativehook, Java Advanced Imaging 1.1.2
