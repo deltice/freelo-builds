@@ -11,7 +11,8 @@ import org.jnativehook.NativeHookException;
 import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
-import com.sun.speech.freetts.FreeTTS;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 public class KeyListener implements NativeKeyListener {
 	
@@ -20,46 +21,46 @@ public class KeyListener implements NativeKeyListener {
 	@Override
 	public void nativeKeyPressed(NativeKeyEvent e) {
 		if (e.getKeyCode() == NativeKeyEvent.VC_BACK_SLASH) {
-			try {
-				BufferedImage image = new Robot()
-						.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));	
-				try {
-					ImageAnalyze ia = new ImageAnalyze(image, blueSide);
-					int champ = ia.getUserChamp();
-					int[] userItems = ia.getUserItems();
-					int[] enemy1 = null;
-					int[] enemy2 = null;
-					int[] enemy3 = null;
-					int[] enemy4 = null;
-					int[] enemy5 = null;
-					if (blueSide) {
-						enemy1 = ia.getPlayer6();
-						enemy2 = ia.getPlayer7();
-						enemy3 = ia.getPlayer8();
-						enemy4 = ia.getPlayer9();
-						enemy5 = ia.getPlayer10();
-					} else {
-						enemy1 = ia.getPlayer1();
-						enemy2 = ia.getPlayer2();
-						enemy3 = ia.getPlayer3();
-						enemy4 = ia.getPlayer4();
-						enemy5 = ia.getPlayer5();
-					}
-					DatabaseSearcher d = new DatabaseSearcher(champ, userItems, enemy1, enemy2, enemy3, enemy4, enemy5);
-					String itemName = d.findNextItem();
-
-					FreeTTS speech = new FreeTTS();
-					speech.startup();
-					speech.textToSpeech(itemName);
-					speech.shutdown();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-			} catch (HeadlessException e1) {
-				e1.printStackTrace();
-			} catch (AWTException e1) {
-				e1.printStackTrace();
-			}
+//			try {
+//				BufferedImage image = new Robot()
+//						.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));	
+//				try {
+//					ImageAnalyze ia = new ImageAnalyze(image, blueSide);
+//					int champ = ia.getUserChamp();
+//					int[] userItems = ia.getUserItems();
+//					int[] enemy1 = null;
+//					int[] enemy2 = null;
+//					int[] enemy3 = null;
+//					int[] enemy4 = null;
+//					int[] enemy5 = null;
+//					if (blueSide) {
+//						enemy1 = ia.getPlayer6();
+//						enemy2 = ia.getPlayer7();
+//						enemy3 = ia.getPlayer8();
+//						enemy4 = ia.getPlayer9();
+//						enemy5 = ia.getPlayer10();
+//					} else {
+//						enemy1 = ia.getPlayer1();
+//						enemy2 = ia.getPlayer2();
+//						enemy3 = ia.getPlayer3();
+//						enemy4 = ia.getPlayer4();
+//						enemy5 = ia.getPlayer5();
+//					}
+//					DatabaseSearcher d = new DatabaseSearcher(champ, userItems, enemy1, enemy2, enemy3, enemy4, enemy5);
+//					String itemName = d.findNextItem();
+					VoiceManager vm = VoiceManager.getInstance();
+			        Voice voice = vm.getVoice("kevin16");
+			        voice.allocate();
+//				voice.speak(itemName);
+			        voice.speak("Infinity Edge");
+//				} catch (IOException e1) {
+//					e1.printStackTrace();
+//				}
+//			} catch (HeadlessException e1) {
+//				e1.printStackTrace();
+//			} catch (AWTException e1) {
+//				e1.printStackTrace();
+//			}
 		}
 		if (e.getKeyCode() == NativeKeyEvent.VC_OPEN_BRACKET) {
 			blueSide = true;
