@@ -1,0 +1,96 @@
+h1 {
+	font-family: Open Sans;
+}
+
+#header {
+	height: 200px;
+	background-color: #174C3B; /* hex colors #123abc */
+	/* border-radius: 0 0 2em 2em;
+		border-style: solid;
+		border-width: 0 0 75px 0;
+	border-color: #3333bb; */
+}
+
+#border {
+	height: 50px;
+}
+
+/*
+.grad {
+    background: #174C3B;  For browsers that do not support gradients 
+    background: -webkit-linear-gradient(#34B44C, #174C3B);  For Safari 5.1 to 6.0 
+    background: -o-linear-gradient(#34B44C, #174C3B);  For Opera 11.1 to 12.0 
+    background: -moz-linear-gradient(#34B44C, #174C3B);  For Firefox 3.6 to 15 
+    background: linear-gradient(#34B44C, #174C3B);  Standard syntax 
+} 
+*/
+
+p {
+	font-family: Open Sans;
+}
+
+.link {
+	color: black;
+	text-decoration: underline;
+}
+
+#box {
+	padding: 20px 200px 50px 200px;
+	color: black;
+}
+
+#title {
+	text-align: center;
+	margin: 0;
+	padding: 50px;
+	vertical-align: center;
+	font-family: Open Sans;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size: 5em;
+}
+
+#info {
+	text-align: center;
+}
+
+span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+body {
+	background-color: white;
+}
+
+.tabs {
+	height: 50px;
+	background-color: #174C3B;
+	margin: 0;
+	padding-top: 20px;
+	border-bottom-style: solid;
+	border-width: 10px;
+}
+
+ul {
+	margin: 0;
+}
+
+li {
+	display: inline-block;
+	width: 200px;
+	color: white;
+	font-family: Open Sans;
+	font-weight: bold;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-align: center;
+}
+
+
+
